@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - background_music
+  - SF_Door
+  - Destructible
   layers:
   - Default
   - TransparentFX

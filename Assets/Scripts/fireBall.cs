@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fireBall : MonoBehaviour {
 
-    GameObject prefab;
+    //GameObject prefab;
 
     public float velocity;
     public float forwardOffset;
@@ -38,22 +38,22 @@ public class fireBall : MonoBehaviour {
                 go.AddComponent<Rigidbody>();
                 go.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
                 go.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * velocity;
-                //go.AddComponent<DWGDestroyer>();
+                go.AddComponent<DWGDestroyer>();
                 Destroy(go, 10f);
             }
 
-            if (throwable == 2)
-            {
-                GameObject go = Instantiate(prefab) as GameObject;
-                //go.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
-                go.transform.position = transform.position + transform.forward;
-                Quaternion rot = Quaternion.FromToRotation(Vector3.up, go.transform.position);
-                go.AddComponent<Rigidbody>();
-                go.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
-                go.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * velocity;
-                //go.AddComponent<DWGDestroyer>();
-                Destroy(go, 1f);
-            }
+            //if (throwable == 2)
+            //{
+            //    GameObject go = Instantiate(prefab) as GameObject;
+            //    //go.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+            //    go.transform.position = transform.position + transform.forward;
+            //    Quaternion rot = Quaternion.FromToRotation(Vector3.up, go.transform.position);
+            //    go.AddComponent<Rigidbody>();
+            //    go.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f);
+            //    go.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * velocity;
+            //    //go.AddComponent<DWGDestroyer>();
+            //    Destroy(go, 1f);
+            //}
 
             AudioManager.PlaySFX(AudioResources.Instance.shoot_ball);
         }
