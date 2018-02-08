@@ -94,7 +94,7 @@ public class AudioManager
 	{
 		PlayerPrefs.SetFloat("volumeSFX", volumeSFX);
 		PlayerPrefs.SetFloat("volumeVoice", volumeVoice);
-		PlayerPrefs.SetFloat("volumeMusic", volumeMusic);
+        PlayerPrefs.SetFloat("volumeMusic", volumeMusic);
 		PlayerPrefs.SetFloat("volumeAmbient", volumeAmbient);
 	}
 
@@ -113,9 +113,10 @@ public class AudioManager
 		voiceList.Add(source);
 	}
 
-	public static void PlayBackgroundMusic(AudioSource source)
+    public static void PlayBackgroundMusic(AudioSource source, float delay = 0)
 	{
-		backgroundMusic = source;
+        source.volume = volumeMusic;
+        source.PlayDelayed(delay);
 	}
 
 	public static void PlayAmbientalSound(AudioSource source, float delay = 0)

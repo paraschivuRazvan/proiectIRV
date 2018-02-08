@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +33,8 @@ public class ScreenManager : MonoBehaviour
             int timeScale = openMenu ? 0 : 1;
 
             Time.timeScale = timeScale;
+
+            Player.GetComponent<FirstPersonController>().enabled = !openMenu;
 		}
 	}
 }

@@ -23,6 +23,7 @@ public class LevelInit : MonoBehaviour
 			{
 				loc = location;
 				player.transform.position = loc.transform.position + new Vector3(0, 2, 0);
+                AudioManager.PlayBackgroundMusic(AudioResources.Instance.backgroundMusic);
 				break;
 			}
 		}

@@ -9,17 +9,13 @@ public enum AmbientalMusic
 	SaveSound,
 }
 
-public enum BackgroundMusic
-{
-	Music1,
-	Music2,
-}
-
 public class AudioResources : MonoBehaviour
 {
 
-	public AudioSource collect_coin;
-	public AudioSource[] backgroundMusic;
+    public AudioSource collect_coin;
+    public AudioSource shoot_ball;
+	public AudioSource target_break;
+	public AudioSource backgroundMusic;
 	public AudioSource[] ambientalMusic;
 
 	public static AudioResources Instance;

@@ -32,12 +32,14 @@ public class Checkpoint : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (GameData.Instance.locationID != location)
-		{
-			Debug.Log("TriggerArea");
-			GameData.Instance.locationID = location;
-			GameData.Save();
-			AudioManager.PlayAmbientalSound(AudioResources.Instance.ambientalMusic[(int)AmbientalMusic.SaveSound]);
+        if (GameData.Instance.locationID != location)
+        {
+            if (other.tag == "Player") {
+                Debug.Log("TriggerArea");
+                GameData.Instance.locationID = location;
+                GameData.Save();
+                AudioManager.PlayAmbientalSound(AudioResources.Instance.ambientalMusic[(int)AmbientalMusic.SaveSound]);
+            }
 		}
 	}
 }
